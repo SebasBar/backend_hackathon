@@ -47,11 +47,12 @@ exports.getOneEmployee = async (req, res, next) => {
 
 exports.createEmployee = async (req, res, next) => {
   try {
-    const { name, last_name } = req.body;
+    const { name, last_name, picture } = req.body;
     const newEmployee = await client.employee.create({
       data: {
         name,
         last_name,
+        picture,
       },
     });
 
